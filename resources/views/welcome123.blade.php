@@ -125,7 +125,7 @@
                </div>
             </a>
            
-         <a href="{{route('bab5')}}" class="menu-item">
+            <a href="{{route('bab5')}}" class="menu-item">
                <div>
                   <i class="mdi mdi-text-box-multiple"></i>
                   <div class="menu-title"><strong>BAB 5</strong></div>

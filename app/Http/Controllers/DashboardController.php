@@ -102,6 +102,9 @@ class DashboardController extends Controller
     public function sistem(){
         return view('pages.bab5.sistem');
     }
+    public function sprint(){
+        return view('pages.bab5.sprint');
+    }
     public function blackbox(){
         return view('pages.bab5.blackbox');
     }

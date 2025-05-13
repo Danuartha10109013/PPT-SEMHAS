@@ -9,7 +9,9 @@
         </div>
         <div class="card-body">
             <h1>BAB 4 || Entity Relationship Diagram</h1>
-
+            <center>
+                <img src="{{asset('erd.jpg')}}" alt="">
+            </center>
         </div>
     </div>
 </div>

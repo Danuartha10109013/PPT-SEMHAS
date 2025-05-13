@@ -9,7 +9,9 @@
         </div>
         <div class="card-body">
             <h1>BAB 4 || Class Diagram</h1>
-
+            <center>
+                <img class="mt-5" src="{{asset('class.jpg')}}" width="50%" alt="">
+            </center>
         </div>
     </div>
 </div>

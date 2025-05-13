@@ -90,9 +90,9 @@
                <li class="{{ request()->routeIs('bab4.erd') ? 'active' : '' }}">
                      <a href="{{ route('bab4.erd') }}"><i class="mdi mdi-numeric-1"></i>Entity Relationship Diagram</a>
                </li>
-               <li class="{{ request()->routeIs('bab4.kamus') ? 'active' : '' }}">
+               {{-- <li class="{{ request()->routeIs('bab4.kamus') ? 'active' : '' }}">
                      <a href="{{ route('bab4.kamus') }}"><i class="mdi mdi-numeric-2"></i>Kamus Data</a>
-               </li>
+               </li> --}}
                
             </ul>
          </li>

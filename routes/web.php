@@ -50,6 +50,7 @@ Route::prefix('bab5')->group(function () {
     Route::get('/', [DashboardController::class, 'bab5'])->name('bab5');
     Route::get('/imccalls', [DashboardController::class, 'imccalls'])->name('bab5.imccalls');
     Route::get('/sistem', [DashboardController::class, 'sistem'])->name('bab5.sistem');
+    Route::get('/sprint', [DashboardController::class, 'sprint'])->name('bab5.sprint');
     Route::get('/blackbox', [DashboardController::class, 'blackbox'])->name('bab5.blackbox');
     Route::get('/uat', [DashboardController::class, 'uat'])->name('bab5.uat');
 });

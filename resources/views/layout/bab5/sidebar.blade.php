@@ -43,14 +43,19 @@
                 <i class="mdi mdi-numeric-2"></i><span>Sistem</span>
             </a>
           </li>
+        <li class="{{ request()->routeIs('bab5.sprint') ? 'active' : '' }}">
+            <a href="{{ route('bab5.sprint') }}" class="iq-waves-effect" aria-expanded="false">
+                <i class="mdi mdi-numeric-3"></i><span>Sprint Execution</span>
+            </a>
+          </li>
           <li class="{{ request()->routeIs('bab5.blackbox') ? 'active' : '' }}">
             <a href="{{ route('bab5.blackbox') }}" class="iq-waves-effect" aria-expanded="false">
-                <i class="mdi mdi-numeric-3"></i><span>Blackbox</span>
+                <i class="mdi mdi-numeric-4"></i><span>Blackbox</span>
             </a>
           </li>
           <li class="{{ request()->routeIs('bab5.uat') ? 'active' : '' }}">
             <a href="{{ route('bab5.uat') }}" class="iq-waves-effect" aria-expanded="false">
-                <i class="mdi mdi-numeric-4"></i><span>User Acceptance Testing</span>
+                <i class="mdi mdi-numeric-5"></i><span>User Acceptance Testing</span>
             </a>
           </li>
        </ul>
