@@ -4,19 +4,20 @@
 
 @section('content')
 <div class="container">
-    <div class="card">
-        <div class="card-header">
-        </div>
+    <div class="card shadow-sm">
         <div class="card-body">
-            <h1>BAB 5 || User Acceptance Testing</h1>
-            <p class="text text-justify">Hasil pengujian Black Box  yang telah dilakukan, menunjukkan bahwa Software yang dibangun telah memenuhi kebutuhan fungsional. Namun, pada prosesnya ada kemungkinan masih terjadi kesalahan maka dari itu diperlukan adanya User Acceptance Testing (UAT) untuk menguji Software yang dibangun sehingga telah sesuai dengan kebutuhan dan kenyamanan user.</p>
-            <div class="row">
-                <div class="col-md-6 text-right">
-                    <img src="{{asset('uat1.jpg')}}" width="70%" alt="">
-                </div>
-                <div class="col-md-6 text-left">
-                    <img src="{{asset('uat2.jpg')}}" width="70%" alt="">
+            <h1 class="mb-4"><i class="fas fa-user-check text-primary"></i> BAB 5 || User Acceptance Testing</h1>
 
+            <p class="text-justify">
+                Hasil pengujian <strong>Black Box</strong> yang telah dilakukan menunjukkan bahwa perangkat lunak yang dibangun telah memenuhi kebutuhan fungsional. Namun, untuk memastikan bahwa sistem benar-benar sesuai dengan kebutuhan dan kenyamanan pengguna, maka dilakukan <strong>User Acceptance Testing (UAT)</strong>. Pengujian ini bertujuan memastikan bahwa sistem dapat diterima dan digunakan dengan baik oleh end-user.
+            </p>
+
+            <div class="row mt-4">
+                <div class="col-md-6 mb-3 text-center">
+                    <img src="{{ asset('uat1.jpg') }}" alt="UAT Gambar 1" class="img-fluid rounded shadow-sm" style="max-width: 90%;">
+                </div>
+                <div class="col-md-6 mb-3 text-center">
+                    <img src="{{ asset('uat2.jpg') }}" alt="UAT Gambar 2" class="img-fluid rounded shadow-sm" style="max-width: 90%;">
                 </div>
             </div>
         </div>

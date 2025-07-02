@@ -3,13 +3,18 @@
 @section('title', 'BAB 2 || Pengembangan')
 
 @section('content')
-<div class="container">
-    <div class="card">
-        <div class="card-header">
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-info text-white">
+            <h4><i class="fas fa-cogs"></i> BAB 2 – Pengembangan</h4>
         </div>
         <div class="card-body">
-            <h1>BAB 2 || Pengembangan</h1>
-            <p class="text text-justify">Pengembangan sistem informasi adalah suatu kumpuan proses yang terstruktur berupa metode, praktik, peralatan terotomasi yang digunakan oleh stakeholder untuk memelihara dan melakukan perubahan atau penyesuaian pada sistem informasi dan perangkat lunak (Hartono, 2021).</p>
+            <p class="text-justify">
+                <strong>Pengembangan sistem informasi</strong> adalah suatu kumpulan proses yang terstruktur berupa metode, praktik, dan peralatan terotomasi yang digunakan oleh stakeholder untuk memelihara serta melakukan perubahan atau penyesuaian pada sistem informasi dan perangkat lunak.
+            </p>
+            <p class="text-end text-muted">
+                <em>— Hartono, 2021</em>
+            </p>
         </div>
     </div>
 </div>

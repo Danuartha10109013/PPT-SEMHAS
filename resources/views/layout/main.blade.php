@@ -19,7 +19,7 @@
       <link rel="stylesheet" href="{{asset('vendor')}}/css/responsive.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
-     
+     <script src="https://kit.fontawesome.com/85ec87b76d.js" crossorigin="anonymous"></script>
    </head>
    <body class="sidebar-main-active right-column-fixed header-top-bgcolor">
       <!-- loader Start -->

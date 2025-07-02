@@ -4,70 +4,57 @@
 
 @section('content')
 <div class="container">
-    <div class="card">
-        <div class="card-header">
-        </div>
+    <div class="card shadow-sm">
         <div class="card-body">
-            <h1>BAB 5 || Blackbox</h1>
-            <p class="text text-justify">
-                Pengujian model Black Box  dilakukan dengan mempertimbangkan sistem sebagai suatu kotak hitam, di mana input diberikan ke sistem dan output yang dihasilkan dievaluasi tanpa memperhatikan bagaimana sistem mengolah input tersebut. Metode ini fokus pada fungsi dan perilaku eksternal sistem. Tujuannya adalah untuk memastikan bahwa sistem memberikan hasil yang diharapkan tanpa perlu mengetahui rincian implementasinya.
+            <h1 class="mb-4"><i class="fas fa-vial text-primary"></i> BAB 5 || Blackbox</h1>
+            <p class="text-justify">
+                Pengujian model <strong>Black Box</strong> dilakukan dengan mempertimbangkan sistem sebagai suatu <em>kotak hitam</em>, di mana input diberikan ke sistem dan output dievaluasi tanpa memperhatikan bagaimana sistem mengolah input tersebut. Metode ini fokus pada fungsi dan perilaku eksternal sistem dengan tujuan memastikan bahwa sistem memberikan hasil yang diharapkan tanpa mengetahui detail implementasinya.
             </p>
 
-            <p>
-                Hasil Pengujian
-            </p>
-            <table border="1" cellspacing="0" cellpadding="8" style="border-collapse: collapse; width: 100%;">
-                <thead style="background-color: #f2f2f2;">
-                    <tr>
-                    <th>Pengujian</th>
-                    <th>Tanggal</th>
-                    <th>Hasil Uji</th>
-                    <th>Nama Penguji</th>
-                    <th>Test Case Validity</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td>Pengujian ke-1</td>
-                    <td>07/05/2025</td>
-                    <td>
-                        Kelas Uji: 17<br>
-                        Bulir Uji: 84<br>
-                        Test Case: 84<br>
-                        Jumlah Test Case Valid: 84<br>
-                        Jumlah Test Case Tidak Valid: 0
-                    </td>
-                    <td>Sheva Virtalioka</td>
-                    <td>(84 / 84) × 100% = <strong>100%</strong></td>
-                    </tr>
-                    <tr>
-                    <td>Pengujian ke-2</td>
-                    <td>07/05/2025</td>
-                    <td>
-                        Kelas Uji: 17<br>
-                        Bulir Uji: 84<br>
-                        Test Case: 84<br>
-                        Jumlah Test Case Valid: 84<br>
-                        Jumlah Test Case Tidak Valid: 0
-                    </td>
-                    <td>Asep Saepulloh</td>
-                    <td>(84 / 84) × 100% = <strong>100%</strong></td>
-                    </tr>
-                    <tr>
-                    <td>Pengujian ke-3</td>
-                    <td>07/05/2025</td>
-                    <td>
-                        Kelas Uji: 17<br>
-                        Bulir Uji: 84<br>
-                        Test Case: 84<br>
-                        Jumlah Test Case Valid: 84<br>
-                        Jumlah Test Case Tidak Valid: 0
-                    </td>
-                    <td>Rifky Frimanda</td>
-                    <td>(84 / 84) × 100% = <strong>100%</strong></td>
-                    </tr>
-                </tbody>
+            <h5 class="mt-4"><i class="fas fa-check-square text-success"></i> Hasil Pengujian</h5>
+            <div class="table-responsive">
+                <table class="table table-bordered align-middle">
+                    <thead class="table-secondary text-center">
+                        <tr>
+                            <th><i class="fas fa-file-alt"></i> Pengujian</th>
+                            <th><i class="fas fa-calendar-alt"></i> Tanggal</th>
+                            <th><i class="fas fa-tasks"></i> Hasil Uji</th>
+                            <th><i class="fas fa-user"></i> Nama Penguji</th>
+                            <th><i class="fas fa-percentage"></i> Test Case Validity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php
+                            $ujians = [
+                                ['ke' => 1, 'tanggal' => '07/05/2025', 'penguji' => 'Sheva Virtalioka'],
+                                ['ke' => 2, 'tanggal' => '07/05/2025', 'penguji' => 'Asep Saepulloh'],
+                                ['ke' => 3, 'tanggal' => '07/05/2025', 'penguji' => 'Rifky Frimanda']
+                            ];
+                        @endphp
+
+                        @foreach($ujians as $ujian)
+                        <tr>
+                            <td class="text-center">Pengujian ke-{{ $ujian['ke'] }}</td>
+                            <td class="text-center">{{ $ujian['tanggal'] }}</td>
+                            <td>
+                                <ul class="mb-0 ps-3">
+                                    <li>Kelas Uji: 17</li>
+                                    <li>Bulir Uji: 84</li>
+                                    <li>Test Case: 84</li>
+                                    <li>Jumlah Valid: <strong>84</strong></li>
+                                    <li>Jumlah Tidak Valid: <strong>0</strong></li>
+                                </ul>
+                            </td>
+                            <td class="text-center">{{ $ujian['penguji'] }}</td>
+                            <td class="text-center">
+                                <span class="badge bg-success fs-6">100%</span><br>
+                                <small>(84 / 84)</small>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
                 </table>
+            </div>
 
         </div>
     </div>

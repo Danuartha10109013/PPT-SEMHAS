@@ -1,179 +1,133 @@
 @extends('layout.main')
 
-@section('title', 'BAB 5 || Implementasi Mc Calls Model')
+@section('title', 'BAB 5 || Implementasi Mc Call\'s Model')
 
 @section('content')
-<div class="container">
-    <div class="card">
-        <div class="card-header">
+<div class="container py-4">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h3><i class="bi bi-gear-wide-connected me-2"></i>Implementasi Mc Call's Model</h3>
         </div>
         <div class="card-body">
-            <div class="row">
-                <h1>BAB 5 || Implementasi Mc Call's Model</h1>
+            <h4 class="mb-3"><i class="bi bi-1-circle me-2"></i>Pengujian dengan Software 🔧</h4>
+            <div class="row mb-4">
                 <div class="col-md-4">
-                    <p>1.   Pengujian dengan software</p>
-                    <ul>
-                        <li>a)  Pengujian Realibility dengan WAPT <br>
-                            <img src="{{asset('WAPT1.png.jpg')}}" width="80%" alt="">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>a)</strong> Realibility - WAPT 🧪<br>
+                            <img src="{{ asset('WAPT1.png.jpg') }}" width="100%" class="rounded shadow-sm mt-2" alt="WAPT Test Result">
                         </li>
-                        <li>b)  Pengujian Efficiency dengan Google Lighthouse
-                            <br>
-                            <img src="{{asset('GL1.png')}}" width="80%" alt="">
-
+                        <li class="list-group-item">
+                            <strong>b)</strong> Efficiency - Google Lighthouse 🚀<br>
+                            <img src="{{ asset('GL1.png') }}" width="100%" class="rounded shadow-sm mt-2" alt="Google Lighthouse Result">
                         </li>
-                        <li>b)  Pengujian Integrity dengan Sucuri Sitehack <br>
-                            <img src="{{asset('Sucuri.png')}}" width="80%" alt="">
-                        
+                        <li class="list-group-item">
+                            <strong>c)</strong> Integrity - Sucuri SiteCheck 🔒<br>
+                            <img src="{{ asset('Sucuri.png') }}" width="100%" class="rounded shadow-sm mt-2" alt="Sucuri Result">
                         </li>
                     </ul>
                 </div>
+
                 <div class="col-md-8">
-                    <p>2.   Pengeujian dengan kuisioner</p>
-                    <table class="table">
-                        <thead style="background-color: #f2f2f2;">
-                            <tr>
-                            <th>Kategori</th>
-                            <th>Jenis</th>
-                            <th>Pertanyaan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Product Operation -->
-                            <tr>
-                            <td rowspan="10">Product Operation</td>
-                            <td>Correctness</td>
-                            <td>Sistem mampu menampilkan data dengan benar</td>
-                            </tr>
-                            <tr>
-                            <td>Correctness</td>
-                            <td>Sistem mampu menampilkan kesesuaian informasi</td>
-                            </tr>
-                            <tr>
-                            <td>Reliability</td>
-                            <td>Keseluruhan menu dan fitur dapat berjalan dengan baik</td>
-                            </tr>
-                            <tr>
-                            <td>Reliability</td>
-                            <td>Menu yang tersedia dapat memenuhi fungsinya masing-masing?</td>
-                            </tr>
-                            <tr>
-                            <td>Efficiency</td>
-                            <td>Seberapa cepat sistem dalam menampilkan data yang dibutuhkan?</td>
-                            </tr>
-                            <tr>
-                            <td>Efficiency</td>
-                            <td>Apakah sistem dapat menangani jumlah pengguna yang banyak tanpa mengalami penurunan performa?</td>
-                            </tr>
-                            <tr>
-                            <td>Integrity</td>
-                            <td>Sistem mampu melakukan pelacakan perubahan data</td>
-                            </tr>
-                            <tr>
-                            <td>Integrity</td>
-                            <td>Apakah sistem memiliki mekanisme untuk mencegah akses tidak sah?</td>
-                            </tr>
-                            <tr>
-                            <td>Usability</td>
-                            <td>Sistem memiliki desain dan tampilan yang jelas?</td>
-                            </tr>
-                            <tr>
-                            <td>Usability</td>
-                            <td>Bahasa yang digunakan pada sistem konsisten?</td>
-                            </tr>
+                    <h4><i class="bi bi-2-circle me-2"></i>Pengujian dengan Kuisioner 📝</h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Kategori</th>
+                                    <th>Jenis</th>
+                                    <th>Pertanyaan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{-- Product Operation --}}
+                                @php
+                                    $ops = [
+                                        ['Correctness', 'Sistem mampu menampilkan data dengan benar'],
+                                        ['Correctness', 'Sistem mampu menampilkan kesesuaian informasi'],
+                                        ['Reliability', 'Keseluruhan menu dan fitur dapat berjalan dengan baik'],
+                                        ['Reliability', 'Menu yang tersedia dapat memenuhi fungsinya masing-masing?'],
+                                        ['Efficiency', 'Seberapa cepat sistem dalam menampilkan data yang dibutuhkan?'],
+                                        ['Efficiency', 'Apakah sistem dapat menangani jumlah pengguna yang banyak tanpa mengalami penurunan performa?'],
+                                        ['Integrity', 'Sistem mampu melakukan pelacakan perubahan data'],
+                                        ['Integrity', 'Apakah sistem memiliki mekanisme untuk mencegah akses tidak sah?'],
+                                        ['Usability', 'Sistem memiliki desain dan tampilan yang jelas?'],
+                                        ['Usability', 'Bahasa yang digunakan pada sistem konsisten?']
+                                    ];
+                                @endphp
+                                <tr>
+                                    <td rowspan="{{ count($ops) }}" class="align-middle text-center bg-light">🛠️ Product Operation</td>
+                                    @foreach($ops as $i => $row)
+                                        @if($i > 0)<tr>@endif
+                                            <td><span class="badge bg-info">{{ $row[0] }}</span></td>
+                                            <td>{{ $row[1] }}</td>
+                                        @if($i > 0)</tr>@endif
+                                    @endforeach
+                                </tr>
 
-                            <!-- Product Revisions -->
-                            <tr>
-                            <td rowspan="6">Product Revisions</td>
-                            <td>Maintainability</td>
-                            <td>Apakah sistem mudah diperbaiki jika terjadi kesalahan?</td>
-                            </tr>
-                            <tr>
-                            <td>Maintainability</td>
-                            <td>Apakah sistem memiliki dokumentasi yang memudahkan pemeliharaan?</td>
-                            </tr>
-                            <tr>
-                            <td>Flexibility</td>
-                            <td>Apakah sistem dapat dengan mudah disesuaikan dengan kebutuhan baru?</td>
-                            </tr>
-                            <tr>
-                            <td>Flexibility</td>
-                            <td>Apakah sistem mendukung berbagai konfigurasi sesuai dengan kebutuhan pengguna?</td>
-                            </tr>
-                            <tr>
-                            <td>Testability</td>
-                            <td>Sistem memiliki informasi yang cukup baik untuk diuji?</td>
-                            </tr>
-                            <tr>
-                            <td>Testability</td>
-                            <td>Apakah sistem mendukung pengujian otomatis atau manual dengan mudah?</td>
-                            </tr>
+                                {{-- Product Revisions --}}
+                                @php
+                                    $rev = [
+                                        ['Maintainability', 'Apakah sistem mudah diperbaiki jika terjadi kesalahan?'],
+                                        ['Maintainability', 'Apakah sistem memiliki dokumentasi yang memudahkan pemeliharaan?'],
+                                        ['Flexibility', 'Apakah sistem dapat dengan mudah disesuaikan dengan kebutuhan baru?'],
+                                        ['Flexibility', 'Apakah sistem mendukung berbagai konfigurasi sesuai dengan kebutuhan pengguna?'],
+                                        ['Testability', 'Sistem memiliki informasi yang cukup baik untuk diuji?'],
+                                        ['Testability', 'Apakah sistem mendukung pengujian otomatis atau manual dengan mudah?']
+                                    ];
+                                @endphp
+                                <tr>
+                                    <td rowspan="{{ count($rev) }}" class="align-middle text-center bg-light">🔄 Product Revisions</td>
+                                    @foreach($rev as $i => $row)
+                                        @if($i > 0)<tr>@endif
+                                            <td><span class="badge bg-success">{{ $row[0] }}</span></td>
+                                            <td>{{ $row[1] }}</td>
+                                        @if($i > 0)</tr>@endif
+                                    @endforeach
+                                </tr>
 
-                            <!-- Product Transition -->
-                            <tr>
-                            <td rowspan="6">Product Transition</td>
-                            <td>Portability</td>
-                            <td>Apakah sistem dapat dijalankan di berbagai platform atau perangkat?</td>
-                            </tr>
-                            <tr>
-                            <td>Portability</td>
-                            <td>Seberapa mudah sistem dapat dipindahkan ke infrastruktur atau server lain?</td>
-                            </tr>
-                            <tr>
-                            <td>Reusability</td>
-                            <td>Apakah ada komponen dalam sistem yang dapat digunakan kembali untuk pengembangan sistem lain?</td>
-                            </tr>
-                            <tr>
-                            <td>Reusability</td>
-                            <td>Apakah sistem menggunakan modul atau library yang bersifat reusable?</td>
-                            </tr>
-                            <tr>
-                            <td>Interoperability</td>
-                            <td>Apakah sistem dapat berintegrasi dengan aplikasi lain dengan mudah?</td>
-                            </tr>
-                            <tr>
-                            <td>Interoperability</td>
-                            <td>Seberapa baik sistem dapat bertukar data dengan sistem eksternal?</td>
-                            </tr>
+                                {{-- Product Transition --}}
+                                @php
+                                    $trans = [
+                                        ['Portability', 'Apakah sistem dapat dijalankan di berbagai platform atau perangkat?'],
+                                        ['Portability', 'Seberapa mudah sistem dapat dipindahkan ke infrastruktur atau server lain?'],
+                                        ['Reusability', 'Apakah ada komponen dalam sistem yang dapat digunakan kembali untuk pengembangan sistem lain?'],
+                                        ['Reusability', 'Apakah sistem menggunakan modul atau library yang bersifat reusable?'],
+                                        ['Interoperability', 'Apakah sistem dapat berintegrasi dengan aplikasi lain dengan mudah?'],
+                                        ['Interoperability', 'Seberapa baik sistem dapat bertukar data dengan sistem eksternal?']
+                                    ];
+                                @endphp
+                                <tr>
+                                    <td rowspan="{{ count($trans) }}" class="align-middle text-center bg-light">🔁 Product Transition</td>
+                                    @foreach($trans as $i => $row)
+                                        @if($i > 0)<tr>@endif
+                                            <td><span class="badge bg-warning text-dark">{{ $row[0] }}</span></td>
+                                            <td>{{ $row[1] }}</td>
+                                        @if($i > 0)</tr>@endif
+                                    @endforeach
+                                </tr>
 
-                            <!-- Other -->
-                            <tr>
-                            <td>Other</td>
-                            <td>Other</td>
-                            <td>Saran atau kebutuhan yang perlu ditambahkan pada sistem</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
+                                {{-- Other --}}
+                                <tr>
+                                    <td class="text-center bg-light">🧠 Other</td>
+                                    <td><span class="badge bg-secondary">Other</span></td>
+                                    <td>Saran atau kebutuhan yang perlu ditambahkan pada sistem</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <p class="text text-justify mt-3">Berdasarkan hasil pengujian yang telah dilakukan, beberapa aspek kualitas sistem telah dinilai dengan berbagai metode. Berikut adalah rekomendasi perbaikan yang difokuskan pada aspek dengan nilai rendah:</p>
-            <ul class="text text-justify">
-                <li>
-                    1.	Peningkatan Kapasitas Crane: Disarankan untuk mengevaluasi dan meningkatkan kapasitas crane guna mengoptimalkan kinerja sistem.
 
-                </li>
-                <li>
-                    2.	Perbaikan Error Handling: Perlu diterapkan mekanisme error handling yang lebih baik untuk mengurangi potensi kesalahan yang tidak terdeteksi.
-
-                </li>
-                <li>
-                    3.	Evaluasi Penerapan SPK: Perlu dilakukan peninjauan ulang terhadap penerapan SPK agar lebih sesuai dengan kebutuhan operasional.
-
-                </li>
-                <li>
-                    4.	Peningkatan Maintainability: Nilai maintainability yang masih cukup rendah menunjukkan perlunya dokumentasi kode yang lebih baik, refactoring kode untuk meningkatkan keterbacaan, serta penerapan standar pengkodean yang lebih konsisten.
-
-                </li>
-                <li>
-                    5.	Optimasi Efisiensi: Nilai efisiensi masih kurang optimal, terutama dalam hal kecepatan loading halaman. Perbaikan dapat dilakukan dengan optimasi gambar, penggunaan caching, serta memperbaiki performa backend.
-
-                </li>
-                <li>
-                    6.	Peningkatan Usability: Website masih kurang dalam menyediakan dokumentasi dan bantuan online. Direkomendasikan untuk menambahkan halaman khusus yang berisi panduan penggunaan dan dokumentasi sistem agar lebih mudah diakses oleh pengguna.
-
-                </li>
+            <h5 class="mt-4"><i class="bi bi-lightbulb-fill text-warning me-2"></i>Rekomendasi Perbaikan 🔍</h5>
+            <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item">📦 <strong>Peningkatan Kapasitas Crane:</strong> Evaluasi dan peningkatan kapasitas crane untuk kinerja optimal.</li>
+                <li class="list-group-item">🐞 <strong>Perbaikan Error Handling:</strong> Terapkan mekanisme yang lebih baik untuk deteksi kesalahan.</li>
+                <li class="list-group-item">📋 <strong>Evaluasi Penerapan SPK:</strong> Tinjau kembali penerapan SPK agar sesuai kebutuhan operasional.</li>
+                <li class="list-group-item">🧰 <strong>Peningkatan Maintainability:</strong> Tambahkan dokumentasi dan lakukan refactoring kode.</li>
+                <li class="list-group-item">⚡ <strong>Optimasi Efisiensi:</strong> Tingkatkan kecepatan dengan optimasi gambar dan caching.</li>
+                <li class="list-group-item">📘 <strong>Peningkatan Usability:</strong> Tambahkan panduan pengguna dan dokumentasi sistem yang mudah diakses.</li>
             </ul>
-            
         </div>
     </div>
 </div>
